@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #FF6B00;
+  --color-accent: #FF8533;
+  --color-navy: #0A192F;
+  --color-navy-light: #112240;
+  --color-background: #ffffff;
+  --color-foreground: #0A192F;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Montserrat", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    background-color: #ffffff;
+    color: var(--color-navy);
+    -webkit-font-smoothing: antialiased;
+    font-family: "Inter", sans-serif;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1,
+  h2,
+  h3 {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.025em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-display {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+/* Details/Summary arrow animation */
+details>summary {
+  list-style: none;
+}
+
+details>summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .expand-icon {
+  transform: rotate(180deg);
 }
