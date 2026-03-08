@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #FF6B00;
+  --color-accent: #FF8533;
+  --color-navy: #0A192F;
+  --color-navy-light: #112240;
+  --color-background: #ffffff;
+  --color-foreground: #0A192F;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #0A192F;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.font-display {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Details/Summary arrow animation */
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .expand-icon {
+  transform: rotate(180deg);
+}
